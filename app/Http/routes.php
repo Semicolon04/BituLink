@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/suppliers', 'SuppliersController@viewSuppliers');
+
+Route::get('/suppliers/{supplier}', 'SuppliersController@viewSupplier');
