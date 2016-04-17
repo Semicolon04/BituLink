@@ -20,8 +20,7 @@
 				</ul>
 			</div>
 		</nav>
-		<div class="container col-md-6 col-md-offset-3">
-			<h1>@yield('header')</h1>
+		<div class="container-fluid col-md-6 col-md-offset-3">
 			@yield('content')
 		</div>
 	</body>

@@ -16,6 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/suppliers', 'SuppliersController@viewSuppliers');
-Route::get('/suppliers/details/{supplier}', 'SuppliersController@viewSupplier');
+Route::get('/suppliers/{supplier}/details', 'SuppliersController@viewSupplier');
 Route::get('/suppliers/new', 'SuppliersController@newSupplier');
 Route::post('/suppliers/create', 'SuppliersController@createSupplier');
+Route::get('/suppliers/{supplier}/edit', 'SuppliersController@editSupplier');
+Route::patch('/suppliers/{supplier}', 'SuppliersController@updateSupplier');
+Route::delete('/suppliers/{supplier}', 'SuppliersController@deleteSupplier');
