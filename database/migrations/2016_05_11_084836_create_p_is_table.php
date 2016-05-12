@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSuppliersTable extends Migration
+class CreatePIsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,13 +12,14 @@ class CreateSuppliersTable extends Migration
      */
     public function up()
     {
-        Schema::create('suppliers', function (Blueprint $table) {
+        Schema::create('p_i_s', function (Blueprint $table) {
             $table->increments('id');
-						$table->string('name');
-						$table->string('address');
-						$table->string('email');
-                        $table->integer('tAmount');
             $table->timestamps();
+			$table->string('description');
+           // $table->integer('supplier_id')->unsigned()->index();
+			$table->string('date');
+			$table->string('billing_address');
+			$table->string('shipping_address');
         });
     }
 
@@ -29,6 +30,6 @@ class CreateSuppliersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('suppliers');
+        Schema::drop('p_i_s');
     }
 }

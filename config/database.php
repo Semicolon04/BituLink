@@ -58,7 +58,7 @@ return [
             'port' => env('DB_PORT', '3306'),
             'database' => 'bitulink',
             'username' => 'root',
-            'password' => '',
+            'password' => 'qwerty',
             'charset' => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix' => '',

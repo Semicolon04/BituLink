@@ -1,9 +1,8 @@
 @extends('layout')
 
 @section('content')
-		<h1>Add New Supplier</h1>
-		@include('errors.form_errors')
-		<form action="/suppliers/create" method="post">
+		<h1>Add New customer</h1>
+		<form action="/customers/create" method="post">
 			{{ csrf_field() }}
 			<div class="form-group">
 				<label for="name">Name: </label>
@@ -17,6 +16,10 @@
 				<label for="email">Email: </label>
 				<input name="email" type="text" class="form-control">
 			</div>
-			<button type="submit" class="btn btn-primary">Add Supplier</button>
+            <div class="form-group">
+				<label for="phone">Phone: </label>
+				<input name="phone" type="text" class="form-control">
+			</div>
+			<button type="submit" class="btn btn-primary">Add Customer </button>
 		</form>
 @endsection

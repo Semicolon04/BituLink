@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Supplier;
+use App\PI;
 
 class SuppliersController extends Controller
 {
@@ -19,13 +20,19 @@ class SuppliersController extends Controller
 		public function newSupplier() {
 			return view('suppliers.new');
 		}
+	
 		public function createSupplier(Request $request) {
+			$this->validate($request, [
+				'name' => 'required',
+				'email' => 'email'
+			]);
 			$supplier = new Supplier;
 			$supplier->name = $request->name;
 			$supplier->address = $request->address;
 			$supplier->email = $request->email;
+			$supplier->tAmount = 0;
 			$supplier->save();
-			redirect('/suppliers');
+			return redirect('/suppliers');
 		}
 		public function editSupplier(Supplier $supplier	) {
 			return view('suppliers.edit	', array('supplier' => $supplier));
@@ -35,7 +42,7 @@ class SuppliersController extends Controller
 			$supplier->address = $request->address;
 			$supplier->email = $request->email;
 			$supplier->save();
-			return redirect(url('/suppliers/' . $supplier->id . '/details'));
+			return redirect(url('/suppliers/' . $supplier->id ));
 		}
 		public function deleteSupplier(Supplier $supplier) {
 			$supplier->delete();

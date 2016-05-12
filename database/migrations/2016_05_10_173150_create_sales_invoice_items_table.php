@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSuppliersTable extends Migration
+class CreateSalesInvoiceItemsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,15 +12,16 @@ class CreateSuppliersTable extends Migration
      */
     public function up()
     {
-        Schema::create('suppliers', function (Blueprint $table) {
+        Schema::create('sales_invoice_items', function (Blueprint $table) {
             $table->increments('id');
-						$table->string('name');
-						$table->string('address');
-						$table->string('email');
-                        $table->integer('tAmount');
             $table->timestamps();
+			$table->string('item_code');
+			$table->string('description');
+			$table->integer('quantity');
+			$table->decimal('price', 5, 2);
         });
     }
+	
 
     /**
      * Reverse the migrations.
@@ -29,6 +30,6 @@ class CreateSuppliersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('suppliers');
+        Schema::drop('sales_invoice_items');
     }
 }

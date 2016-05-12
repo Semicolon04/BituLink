@@ -8,7 +8,7 @@
 		@foreach($suppliers as $supplier)
 			<li class="list-group-item">
 				{{ $supplier->name }}
-				<a class="pull-right" href="/suppliers/{{$supplier->id}}/details">Details</a>
+				<a class="pull-right" href="/suppliers/{{$supplier->id}}">Details</a>
 			</li>
 		@endforeach
 		</ul>
