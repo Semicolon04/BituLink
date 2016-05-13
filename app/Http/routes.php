@@ -67,6 +67,15 @@ Route::group([], function() {
 	Route::post('/pi/{pi}', 'PICtrl@addPIItem');
 	Route::get('/po/{pi}', ['uses' =>'PICtrl@addPO']);
 });
+Route::get('/voucher/new','VoucherController@newVoucher');
+Route::get('/voucher','VoucherController@viewVouchers');
+
+Route::post('/voucher/create', 'VoucherController@addVoucher');
+Route::get('/voucher/{voucher}', 'VoucherController@viewVouchers');
+Route::get('/voucher/{voucher}/edit', 'VoucherController@editVoucher');
+Route::patch('/voucher/{voucher}', 'VoucherController@updateVoucher');
+Route::get('/voucher/{voucher}/', 'VoucherController@viewVoucher');
+Route::delete('/voucher/{voucher}/', 'VoucherController@deleteVoucher');
 
 
 

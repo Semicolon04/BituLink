@@ -33,7 +33,6 @@
             .title {
                 font-size: 96px;
             }
-            <?php echo e(form::select('Customer', $customers)); ?>
 
         </style>
     </head>

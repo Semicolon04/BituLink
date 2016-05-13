@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Log;
 use App\Supplier;
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -14,7 +15,9 @@ use App\PO;
 
 class PICtrl extends Controller
 {
+
     public function viewAll() {
+		Log::info('Showing user profile for user:');
 		$all = PI::all();
 		return view('pi/all', ['pis' => $all]);
 	}
